@@ -1,5 +1,5 @@
-import React, {Component} from 'react';
-import {View, Text, StyleSheet, TouchableOpacity, ScrollView, Image} from 'react-native';
+import React, { Component } from 'react';
+import { View, Text, StyleSheet, TouchableOpacity, ScrollView, Image } from 'react-native';
 import Video from 'react-native-video';
 
 import Header from './common/Header'
@@ -21,25 +21,25 @@ export default class NewsScreen extends Component {
 
     //加载媒体并准备播放时调用的回调函数
     onLoad = (data) => {
-        this.setState({duration: data.duration});
+        this.setState({ duration: data.duration });
     };
     //视频播放过程中每个间隔进度单位调用的回调函数
     onProgress = (data) => {
-        this.setState({currentTime: data.currentTime});
+        this.setState({ currentTime: data.currentTime });
     };
     //视频播放结束时的回调函数
     onEnd = () => {
-        this.setState({paused: true});
+        this.setState({ paused: true });
         //seek(定位)到由秒表示的指定位置
         this.video.seek(0)
     };
     //音频变得嘈杂时的回调 - 应暂停视频
     onAudioBecomingNoisy = () => {
-        this.setState({paused: true})
+        this.setState({ paused: true })
     };
     //音频焦点丢失时的回调 - 如果焦点丢失则暂停
     onAudioFocusChanged = (event: { hasAudioFocus: boolean }) => {
-        this.setState({paused: !event.hasAudioFocus})
+        this.setState({ paused: !event.hasAudioFocus })
     };
 
     //进度条函数
@@ -56,9 +56,9 @@ export default class NewsScreen extends Component {
 
         return (
             <TouchableOpacity onPress={() => {
-                this.setState({rate})
+                this.setState({ rate })
             }}>
-                <Text style={[styles.controlOption, {color: isSelected ? 'red' : '#fff'}]}>
+                <Text style={[styles.controlOption, { color: isSelected ? 'red' : '#fff' }]}>
                     {rate}x
                 </Text>
             </TouchableOpacity>
@@ -71,9 +71,9 @@ export default class NewsScreen extends Component {
 
         return (
             <TouchableOpacity onPress={() => {
-                this.setState({resizeMode})
+                this.setState({ resizeMode })
             }}>
-                <Text style={[styles.controlOption, {color: isSelected ? 'red' : '#fff'}]}>
+                <Text style={[styles.controlOption, { color: isSelected ? 'red' : '#fff' }]}>
                     {resizeMode}
                 </Text>
             </TouchableOpacity>
@@ -86,9 +86,9 @@ export default class NewsScreen extends Component {
 
         return (
             <TouchableOpacity onPress={() => {
-                this.setState({volume})
+                this.setState({ volume })
             }}>
-                <Text style={[styles.controlOption, {color: isSelected ? 'red' : '#fff'}]}>
+                <Text style={[styles.controlOption, { color: isSelected ? 'red' : '#fff' }]}>
                     {volume * 100}%
                 </Text>
             </TouchableOpacity>
@@ -109,10 +109,10 @@ export default class NewsScreen extends Component {
         const flexCompleted = this.getCurrentTimePercentage() * 100;
         const flexRemaining = (1 - this.getCurrentTimePercentage()) * 100;
         if (this.state.changeType == 'aa') {
-            let show = this.state.paused ? <Image source={require('./assets/img/play.png')} style={styles.button}/> : null
+            let show = this.state.paused ? <Image source={require('./assets/img/play.png')} style={styles.button} /> : null
             return (
                 <View style={styles.tab}>
-                    <TouchableOpacity onPress={() => this.setState({paused: true})} style={styles.fullScreen}>
+                    <TouchableOpacity onPress={() => this.setState({ paused: true })} style={styles.fullScreen}>
                         <Video
                             //将组件Video作为参数赋值给了this.video
                             ref={(ref) => {
@@ -136,7 +136,7 @@ export default class NewsScreen extends Component {
                             repeat={false} //确定在到达结尾时是否重复播放视频
                         />
                     </TouchableOpacity>
-                    <TouchableOpacity onPress={() => this.setState({paused: false})}>
+                    <TouchableOpacity onPress={() => this.setState({ paused: false })}>
                         {show}
                     </TouchableOpacity>
                     <View style={styles.controls}>
@@ -162,8 +162,8 @@ export default class NewsScreen extends Component {
                             </View>
                         </View>
                         <View style={styles.progress}>
-                            <View style={[styles.innerProgressCompleted, {flex: flexCompleted}]}/>
-                            <View style={[styles.innerProgressRemaining, {flex: flexRemaining}]}/>
+                            <View style={[styles.innerProgressCompleted, { flex: flexCompleted }]} />
+                            <View style={[styles.innerProgressRemaining, { flex: flexRemaining }]} />
                         </View>
                     </View>
                 </View>
@@ -192,7 +192,7 @@ export default class NewsScreen extends Component {
     render() {
         return (
             <View>
-                <Header/>
+                <Header />
                 <ScrollView>
                     <View style={styles.view}>
                         <TouchableOpacity
@@ -264,7 +264,7 @@ const styles = StyleSheet.create({
         color: '#fff'
     },
 
-//video
+    //video
     fullScreen: {
         position: 'absolute',
         top: 0,

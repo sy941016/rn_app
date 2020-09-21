@@ -1,5 +1,5 @@
-import React, {Component} from 'react';
-import {View, Text, Image, StyleSheet, TextInput, TouchableOpacity} from 'react-native';
+import React, { Component } from 'react';
+import { View, Text, Image, StyleSheet, TextInput, TouchableOpacity } from 'react-native';
 
 export default class Header extends Component {
     constructor(props) {
@@ -18,13 +18,13 @@ export default class Header extends Component {
     }
 
     render() {
-        let v = this.state.show ? <TextInput style={header.input} placeholder={'输入查询'}/> : null;
+        let v = this.state.show ? <TextInput style={header.input} placeholder={'输入查询'} /> : null;
         return (
             <View style={header.view}>
                 <TouchableOpacity onPress={() => this.sousuo()}>
                     <Image source={require('../assets/img/sousuo.png')} style={header.img} />
                 </TouchableOpacity>
-                <Text style={{marginLeft: '25%'}}>React Native App</Text>
+                <Text style={{ marginLeft: '25%' }}>React Native App</Text>
                 {v}
             </View>
         )

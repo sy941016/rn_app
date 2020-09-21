@@ -1,11 +1,11 @@
-import React, {Component} from 'react';
-import {View, Text, Image, StyleSheet, Dimensions, TouchableOpacity} from 'react-native';
+import React, { Component } from 'react';
+import { View, Text, Image, StyleSheet, Dimensions, TouchableOpacity } from 'react-native';
 import Swiper from 'react-native-swiper';  //轮播
 
 import Header from './common/Header'
 
 // 取得屏幕的宽高Dimensions
-const {width, height} = Dimensions.get('window');
+const { width, height } = Dimensions.get('window');
 
 export default class MyPage extends Component {
     constructor(props) {
@@ -62,8 +62,8 @@ export default class MyPage extends Component {
         return (
             <TouchableOpacity onPress={() => navigate.navigate('' + item.to)} style={styles.view} key={key}>
                 <View style={styles.imgBox}><Image source={require('./assets/img/1111.jpg')}
-                                                   style={styles.image}/></View>
-                <Text style={{fontSize: 14}}>{item.name}</Text>
+                    style={styles.image} /></View>
+                <Text style={{ fontSize: 14 }}>{item.name}</Text>
             </TouchableOpacity>
         )
     }
@@ -73,47 +73,47 @@ export default class MyPage extends Component {
         if (this.state.swiperShow) {
             console.log('返回值' + this.state.swiperShow);
             return (
-                    <Swiper
-                        height={'100%'}
-                        showsButtons={false}
-                        removeClippedSubviews={false} //解决白屏问题
-                        autoplay={true}
-                        horizontal={true}
-                        paginationStyle={styles.paginationStyle}
-                        dotStyle={styles.dotStyle}
-                        activeDotStyle={styles.activeDotStyle}
-                    >
-                        <View style={styles.wrapper}>
-                            <Image source={require('./assets/img/1111.jpg')} style={{width: '100%', height: '100%'}}/>
-                            <View style={styles.textView}>
-                                <Text style={styles.text}>我是萨摩呀</Text>
-                            </View>
+                <Swiper
+                    height={'100%'}
+                    showsButtons={false}
+                    removeClippedSubviews={false} //解决白屏问题
+                    autoplay={true}
+                    horizontal={true}
+                    paginationStyle={styles.paginationStyle}
+                    dotStyle={styles.dotStyle}
+                    activeDotStyle={styles.activeDotStyle}
+                >
+                    <View style={styles.wrapper}>
+                        <Image source={require('./assets/img/1111.jpg')} style={{ width: '100%', height: '100%' }} />
+                        <View style={styles.textView}>
+                            <Text style={styles.text}>我是萨摩呀</Text>
                         </View>
-                        <View style={styles.wrapper}>
-                            <Image source={require('./assets/img/1111.jpg')} style={{width: '100%', height: '100%'}}/>
-                            <View style={styles.textView}>
-                                <Text style={styles.text}>我是萨摩呀</Text>
-                            </View>
+                    </View>
+                    <View style={styles.wrapper}>
+                        <Image source={require('./assets/img/1111.jpg')} style={{ width: '100%', height: '100%' }} />
+                        <View style={styles.textView}>
+                            <Text style={styles.text}>我是萨摩呀</Text>
                         </View>
-                        <View style={styles.wrapper}>
-                            <Image source={require('./assets/img/1111.jpg')} style={{width: '100%', height: '100%'}}/>
-                            <View style={styles.textView}>
-                                <Text style={styles.text}>我是萨摩呀</Text>
-                            </View>
+                    </View>
+                    <View style={styles.wrapper}>
+                        <Image source={require('./assets/img/1111.jpg')} style={{ width: '100%', height: '100%' }} />
+                        <View style={styles.textView}>
+                            <Text style={styles.text}>我是萨摩呀</Text>
                         </View>
-                        <View style={styles.wrapper}>
-                            <Image source={require('./assets/img/1111.jpg')} style={{width: '100%', height: '100%'}}/>
-                            <View style={styles.textView}>
-                                <Text style={styles.text}>我是萨摩呀</Text>
-                            </View>
+                    </View>
+                    <View style={styles.wrapper}>
+                        <Image source={require('./assets/img/1111.jpg')} style={{ width: '100%', height: '100%' }} />
+                        <View style={styles.textView}>
+                            <Text style={styles.text}>我是萨摩呀</Text>
                         </View>
-                    </Swiper>
+                    </View>
+                </Swiper>
             );
 
         } else {
             return (
                 <View style={styles.wrapper}>
-                    <Image source={require('./assets/img/1111.jpg')}/>
+                    <Image source={require('./assets/img/1111.jpg')} />
                 </View>
             );
         }
@@ -131,7 +131,7 @@ export default class MyPage extends Component {
     render() {
         return (
             <View>
-                <Header/>
+                <Header />
                 <View style={styles.container}>
                     {this.renderBanner()}
                 </View>
@@ -168,21 +168,21 @@ const styles = StyleSheet.create({
         width: 8,
         height: 8,
         backgroundColor: 'red',
-        borderRadius:8,
+        borderRadius: 8,
     },
-    textView:{
-        width:'100%',
-        height:30,
-        justifyContent:'center',
-        backgroundColor:'#000',
-        opacity:0.5,
-        bottom:30,
-        left:0,
-        paddingLeft:20
+    textView: {
+        width: '100%',
+        height: 30,
+        justifyContent: 'center',
+        backgroundColor: '#000',
+        opacity: 0.5,
+        bottom: 30,
+        left: 0,
+        paddingLeft: 20
     },
-    text:{
-      color:'#fff',
-      fontSize: 16
+    text: {
+        color: '#fff',
+        fontSize: 16
     },
     //列表样式
     list: {

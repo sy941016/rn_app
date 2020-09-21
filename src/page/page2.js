@@ -1,5 +1,5 @@
 import React from 'react'
-import {FlatList, View, Text, StyleSheet} from 'react-native'
+import { FlatList, View, Text, StyleSheet } from 'react-native'
 
 export default class FlatListPage extends React.Component {
     constructor(props) {
@@ -40,7 +40,7 @@ export default class FlatListPage extends React.Component {
 
     render() {
         return (
-            <View style={{height: '100%'}}>
+            <View style={{ height: '100%' }}>
                 <FlatList
                     // 渲染的数据源
                     data={this.state.listData}
@@ -60,10 +60,10 @@ export default class FlatListPage extends React.Component {
                     onEndReached={() => this.getData()}
 
                     ListEmptyComponent={
-                        <Text style={{textAlign: "center", marginBottom: 10}}>暂无数据</Text>}
+                        <Text style={{ textAlign: "center", marginBottom: 10 }}>暂无数据</Text>}
 
                     ListFooterComponent={
-                        <Text style={{textAlign: "center", marginBottom: 10}}>获取更多数据</Text>}
+                        <Text style={{ textAlign: "center", marginBottom: 10 }}>获取更多数据</Text>}
                     // 列表key值
                     keyExtractor={(item, index) => index}
                     //设置下拉加载更多的指示器的位置

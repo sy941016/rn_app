@@ -1,5 +1,5 @@
-import React, {Component} from 'react';
-import {Text, View, ScrollView, RefreshControl, StyleSheet} from 'react-native';
+import React, { Component } from 'react';
+import { Text, View, ScrollView, RefreshControl, StyleSheet } from 'react-native';
 
 export default class page1 extends Component {
     constructor(props) {
@@ -44,14 +44,14 @@ export default class page1 extends Component {
                         }}
                     />
                 }
-                contentContainerStyle={{alignItems: 'center'}}
+                contentContainerStyle={{ alignItems: 'center' }}
             >
                 <View style={styles.view}>
                     <Text>你是萨摩吗？</Text>
                 </View>
                 {this.state.list.map((item, key) => (this.addView(item, key)))}
             </ScrollView>
-    )
+        )
     }
 }
 

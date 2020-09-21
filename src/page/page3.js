@@ -1,6 +1,6 @@
-import React, {Component} from 'react'
-import {View, Text, StyleSheet, Animated, Easing} from 'react-native'
-import {RNCamera} from 'react-native-camera'
+import React, { Component } from 'react'
+import { View, Text, StyleSheet, Animated, Easing } from 'react-native'
+import { RNCamera } from 'react-native-camera'
 
 export default class page3 extends Component {
     constructor(props) {
@@ -21,7 +21,8 @@ export default class page3 extends Component {
             {
                 toValue: 200,
                 duration: 1500,
-                easing: Easing.linear
+                easing: Easing.linear,
+                useNativeDriver: true
             }
         ).start(() => this.startAnimation());
     };
@@ -54,7 +55,7 @@ export default class page3 extends Component {
                         <View style={styles.rectangle}>
                             <Animated.View style={[
                                 styles.border,
-                                {transform: [{translateY: this.state.moveAnim}]}]}/>
+                                { transform: [{ translateY: this.state.moveAnim }] }]} />
                         </View>
                         <Text style={styles.rectangleText}>将二维码放入框内，即可自动扫描</Text>
                         <Text>{this.state.transCode}</Text>
@@ -85,7 +86,7 @@ const styles = StyleSheet.create({
         borderWidth: 1,
         borderColor: '#00FF00',
         backgroundColor: 'transparent',
-        position:'relative'
+        position: 'relative'
     },
     rectangleText: {
         color: '#fff',
@@ -96,7 +97,7 @@ const styles = StyleSheet.create({
         height: 2,
         backgroundColor: '#00FF00',
         position: 'absolute',
-        top:0,
-        left:0
+        top: 0,
+        left: 0
     }
 });
