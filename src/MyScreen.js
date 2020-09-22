@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { View, Text, Animated, ImageBackground, Dimensions } from 'react-native';
-import Echarts from 'native-echarts';
 
 import Header from './common/Header'
 

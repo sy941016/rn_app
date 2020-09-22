@@ -1,6 +1,6 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import Ionicons from 'react-native-vector-icons/Ionicons'; //icon
-import {createBottomTabNavigator, createStackNavigator, createAppContainer} from 'react-navigation';//导航
+import { createBottomTabNavigator, createStackNavigator, createAppContainer } from 'react-navigation';//导航
 
 import HomeScreen from "./src/HomeScreen"
 import MyScreen from "./src/MyScreen"
@@ -19,9 +19,9 @@ const TabNavigator = createBottomTabNavigator(
         "我的": MyScreen
     },
     {
-        defaultNavigationOptions: ({navigation}) => ({
-            tabBarIcon: ({focused, horizontal, tintColor}) => {
-                const {routeName} = navigation.state;
+        defaultNavigationOptions: ({ navigation }) => ({
+            tabBarIcon: ({ focused, horizontal, tintColor }) => {
+                const { routeName } = navigation.state;
                 let IconComponent = Ionicons;
                 let iconName;
                 if (routeName === '首页') {
@@ -34,7 +34,7 @@ const TabNavigator = createBottomTabNavigator(
                     iconName = `ios-folder`;
                 }
 
-                return <IconComponent name={iconName} size={25} color={tintColor}/>;
+                return <IconComponent name={iconName} size={25} color={tintColor} />;
             },
         }),
         tabBarOptions: {
@@ -82,7 +82,7 @@ const AppStackContainer = createAppContainer(AppStack);
 export default class App extends Component {
     render() {
         return (
-            <AppStackContainer/>
+            <AppStackContainer />
         );
     }
 }
