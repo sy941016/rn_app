@@ -38,7 +38,7 @@ export default class NewsScreen extends Component {
         this.setState({ paused: true })
     };
     //音频焦点丢失时的回调 - 如果焦点丢失则暂停
-    onAudioFocusChanged = (event: { hasAudioFocus: boolean }) => {
+    onAudioFocusChanged = (event) => {
         this.setState({ paused: !event.hasAudioFocus })
     };
 
