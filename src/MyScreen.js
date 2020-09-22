@@ -15,7 +15,7 @@ class Greeting extends Component {
     }
 }
 
-class FadeInView extends React.Component {
+class FadeInView extends Component {
     state = {
         fadeAnim: new Animated.Value(0)// 透明度初始设为0
     }
