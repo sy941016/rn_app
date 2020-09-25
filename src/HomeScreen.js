@@ -45,22 +45,28 @@ export default class MyPage extends Component {
                     name: '我是萨摩',
                     to: 'page2'
                 },
+            ],
+            bannerInfo: [
                 {
-                    name: '我是萨摩',
-                    to: 'page2'
+                    mes: '我是萨摩',
                 },
                 {
-                    name: '我是萨摩',
-                    to: 'page2'
-                }
+                    mes: '我是萨摩',
+                },
+                {
+                    mes: '我是萨摩',
+                },
+                {
+                    mes: '我是萨摩',
+                },
             ]
         };
     }
 
     addTab(item, key) {
-        const navigate = this.props.navigation;
+        const { navigate } = this.props.navigation;
         return (
-            <TouchableOpacity onPress={() => navigate.navigate('' + item.to)} style={styles.view} key={key}>
+            <TouchableOpacity onPress={() => navigate('' + item.to)} style={styles.view} key={key}>
                 <View style={styles.imgBox}><Image source={require('./assets/img/1111.jpg')}
                     style={styles.image} /></View>
                 <Text style={{ fontSize: 14 }}>{item.name}</Text>
@@ -68,10 +74,20 @@ export default class MyPage extends Component {
         )
     }
 
+    addBanner(item, key) {
+        return (
+            <View style={styles.wrapper} key={key}>
+                <Image source={require('./assets/img/1111.jpg')} style={{ width: '100%', height: '100%' }} />
+                <View style={styles.textView}>
+                    <Text style={styles.text}>{item.mes}</Text>
+                </View>
+            </View>
+        )
+    }
+
     // 轮播图
     renderBanner() {
         if (this.state.swiperShow) {
-            console.log('返回值' + this.state.swiperShow);
             return (
                 <Swiper
                     height={'100%'}
@@ -83,33 +99,9 @@ export default class MyPage extends Component {
                     dotStyle={styles.dotStyle}
                     activeDotStyle={styles.activeDotStyle}
                 >
-                    <View style={styles.wrapper}>
-                        <Image source={require('./assets/img/1111.jpg')} style={{ width: '100%', height: '100%' }} />
-                        <View style={styles.textView}>
-                            <Text style={styles.text}>我是萨摩呀</Text>
-                        </View>
-                    </View>
-                    <View style={styles.wrapper}>
-                        <Image source={require('./assets/img/1111.jpg')} style={{ width: '100%', height: '100%' }} />
-                        <View style={styles.textView}>
-                            <Text style={styles.text}>我是萨摩呀</Text>
-                        </View>
-                    </View>
-                    <View style={styles.wrapper}>
-                        <Image source={require('./assets/img/1111.jpg')} style={{ width: '100%', height: '100%' }} />
-                        <View style={styles.textView}>
-                            <Text style={styles.text}>我是萨摩呀</Text>
-                        </View>
-                    </View>
-                    <View style={styles.wrapper}>
-                        <Image source={require('./assets/img/1111.jpg')} style={{ width: '100%', height: '100%' }} />
-                        <View style={styles.textView}>
-                            <Text style={styles.text}>我是萨摩呀</Text>
-                        </View>
-                    </View>
+                    {this.state.bannerInfo.map((item, index) => (this.addBanner(item, index)))}
                 </Swiper>
             );
-
         } else {
             return (
                 <View style={styles.wrapper}>
@@ -205,7 +197,7 @@ const styles = StyleSheet.create({
         width: 40,
     },
     view: {
-        width: '17%',
+        width: '25%',
         height: 80,
         alignItems: 'center',
         justifyContent: 'space-between',
