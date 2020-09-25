@@ -9,7 +9,7 @@ import Header from "./common/Header";
 
 const Tab = createMaterialTopTabNavigator();
 
-export default class App extends Component {
+export default class FindScreen extends Component {
     constructor(props) {
         super(props);
     }

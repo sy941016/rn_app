@@ -33,7 +33,7 @@ function Home() {
                         iconName = focused
                             ? 'ios-information-circle'
                             : 'ios-information-circle-outline';
-                    } else if (route.name === 'My') {
+                    } else {
                         iconName = focused ? 'ios-list-box' : 'ios-list';
                     }
 

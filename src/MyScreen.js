@@ -1,9 +1,12 @@
 import React, { Component } from 'react';
 import { View, Text, Animated, ImageBackground, Dimensions } from 'react-native';
+import { createDrawerNavigator } from '@react-navigation/drawer';
 
 import Header from './common/Header'
 
 const { width, height } = Dimensions.get('window');
+
+const Drawer = createDrawerNavigator();
 
 class Greeting extends Component {
     render() {
@@ -51,7 +54,7 @@ class FadeInView extends Component {
     }
 }
 
-export default class LotsOfGreetings extends Component {
+class LotsOfGreetings extends Component {
     render() {
         return (
             <ImageBackground source={require('./assets/img/1111.jpg')} style={{ width: width, height: height }}>
@@ -68,4 +71,12 @@ export default class LotsOfGreetings extends Component {
             </ImageBackground>
         );
     }
+}
+
+export default function MyScreen() {
+    return (
+        <Drawer.Navigator initialRouteName="LotsOfGreetings">
+            <Drawer.Screen name="LotsOfGreetings" component={LotsOfGreetings} />
+        </Drawer.Navigator>
+    );
 }
