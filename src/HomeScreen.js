@@ -66,7 +66,7 @@ export default class MyPage extends Component {
     addTab(item, key) {
         const { navigate } = this.props.navigation;
         return (
-            <TouchableOpacity onPress={() => navigate('' + item.to)} style={styles.view} key={key}>
+            <TouchableOpacity onPress={() => navigate(`${item.to}`)} style={styles.view} key={key}>
                 <View style={styles.imgBox}><Image source={require('./assets/img/1111.jpg')}
                     style={styles.image} /></View>
                 <Text style={{ fontSize: 14 }}>{item.name}</Text>
