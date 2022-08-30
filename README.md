@@ -1,10 +1,7 @@
-## React Native
-##### 构建项目
-###### 初始化项目
-react-native init ProjectName
-###### 启动 
-react-native run-android  
-react-native run-ios
+#### React Native
+##### JSBridge
+给 JavaScript 提供调用 Native 功能的接口，让混合开发中的前端部分可以方便地使用 Native 的功能
+
 ##### 插件
 ###### 1. 导航
 react-navigation
@@ -51,9 +48,9 @@ react-native-linear-gradient
 ```js
 //onPress()
 //Text Button有onPress,若没有，将触发的元素包裹在TouchableOpacity中
- <TouchableOpacity onPress={() =>{}}>
-    <Image source={require('')} />
- </TouchableOpacity>
+<TouchableOpacity onPress={}>
+   <Image source={require('')} />
+</TouchableOpacity>
 ```
 
 ##### requst(fetch)
