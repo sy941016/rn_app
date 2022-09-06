@@ -24,7 +24,7 @@ react-native-linear-gradient
 
 ##### 组件
 ###### 1. 下拉刷新 上拉加载
-+ FlatList
+FlatList
 ```
 <FlatList
     refreshControl={this.renderRefreshControl()}
